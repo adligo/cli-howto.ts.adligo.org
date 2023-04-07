@@ -1,5 +1,5 @@
 # cli-howto.ts.adligo.org
-This is the simplest possible, tutorial on how to write a node.js cli (Command Line Interface) program.  It targets the Linux or MacOs CLI, or Gitbash on Windows.
+This is the simplest possible, tutorial on how to write a node.js cli (Command Line Interface) typescript program.  It targets the Linux or MacOs CLI, or Gitbash on Windows.
 
 ## Summary of Creating a CLI tool 
 1) Edit package.json to have a bin section like the following in this package.json file;
