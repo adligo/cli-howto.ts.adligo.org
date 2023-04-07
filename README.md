@@ -1,4 +1,4 @@
-# slink.ts.adligo.org
+# cli-howto.ts.adligo.org
 This is the simplest possible, tutorial on how to write a node.js cli (Command Line Interface) program.  It targets the Linux or MacOs CLI, or Gitbash on Windows.
 
 ## Summary of Creating a CLI tool 
