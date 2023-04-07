@@ -3,7 +3,7 @@
     "cli-howto": "src/cli-howto.ts"
   },
   "name": "@ts.adligo.org/cli-howto",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This is the simplest possible, tutorial on how to write a node.js cli (Command Line Interface) program",
   "main": "src/cli-howto.ts",
   "scripts": {
@@ -26,7 +26,7 @@
     "url": "https://github.com/adligo/cli-howto.ts.adligo.org/issues"
   },
   "homepage": "https://github.com/adligo/cli-howto.ts.adligo.org#readme",
-  "dependencies": {
-    "typescript": "^5.0.3"
+  "devDependencies": {
+    "typescript": "^5.0.4"
   }
 }
