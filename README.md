@@ -8,7 +8,34 @@ This is the simplest possible, tutorial on how to write a node.js cli (Command L
     "cli-howto": "./src/cli-howto.ts"
   }
 ```
-2) Install with;
+2) Add the link to node js at the top of the cli-howto.ts file
+```
+#! /usr/bin/env node
+```
+4)  Install typescript;
+```
+npm i typescript --save-dev
+```
+
+5) Configure Typescript using the tsconfg.json file
+```
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es6", "es2015", "dom"],
+    "declaration": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "types": ["node"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  }
+}
+```
+
+6) Install on the local machine with;
 ```
 npm install -g .
 ```
@@ -38,3 +65,5 @@ cli-howto
 https://docs.npmjs.com/configuring-your-npm-client-with-your-organization-settings
 - Helpful Article)
 https://medium.com/@manavshrivastava/lets-build-a-cli-command-line-interface-with-node-js-d3b5faacc5ea
+- Helpful Article)
+https://itnext.io/how-to-create-your-own-typescript-cli-with-node-js-1faf7095ef89
