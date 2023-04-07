@@ -40,6 +40,16 @@ npm i typescript --save-dev
 npm install -g .
 ```
 
+7) View the current installed packages on the local machine;
+```
+npm list -g | grep adligo
+```
+
+8) Uninstall the package;
+```
+npm uninstall -g @ts.adligo.org/cli-howto
+```
+
 ## Summary of Publishing your CLI tool
 1) Create an account at https://www.npmjs.com/
 2) Create a organzation (i.e. ts.adligo.org)
