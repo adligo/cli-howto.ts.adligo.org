@@ -12,40 +12,52 @@ This is the simplest possible, tutorial on how to write a node.js cli (Command L
 ```
 #! /usr/bin/env node
 ```
-4)  Install typescript;
+4)  Install typescript, etc;
 ```
 npm i typescript --save-dev
+npm i @types/node --save-dev
+npm i ts-node --save-dev
 ```
 
 5) Configure Typescript using the tsconfg.json file
 ```
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": ["es6", "es2015", "dom"],
-    "declaration": true,
-    "outDir": "lib",
-    "rootDir": "src",
-    "strict": true,
-    "types": ["node"],
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
-  }
-}
+    "experimentalDecorators": true,
+    "lib": ["es6"],
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    }
+ }
+```
+6) Run it locally from the current directory;
+```
+npm run-script run
 ```
 
-6) Install on the local machine with;
+7) Install on the local machine with;
 ```
 npm install -g .
 ```
 
-7) View the current installed packages on the local machine;
+8) View the current installed packages on the local machine;
 ```
 npm list -g | grep adligo
 ```
 
-8) Uninstall the package;
+9) Uninstall the package;
 ```
 npm uninstall -g @ts.adligo.org/cli-howto
 ```
