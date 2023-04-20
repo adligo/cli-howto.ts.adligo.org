@@ -14,25 +14,44 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
+const { spawn, spawnSync } = require('child_process')
+const { stream  } = require('stream'); 
 
-const { spawn } = require('child_process')
 
 class CliArgParser {
 
   constructor() {
-    let pwd = spawn('pwd');
-    pwd.stdout.on('data', (data) => {
-      console.log('running in ' + data);
-    });
-    pwd.stderr.on('pwd stderr data', (data) => {
-      console.log('pwd stderr data ' + data);
-    });
-    pwd.on('pwd error', (error) => {
-      console.log(`pwd error: ${error.message}`);
-  });
+
     console.log('There are ' + process.argv.length + ' command line arguments');
+    var sync = true;
     for (var i=0; i< process.argv.length; i++) {
       console.log('cli arg ' + i + ' is ' + process.argv[i]);
+      if ("--async" == process.argv[i]) {
+        sync = false;
+      }
+    }
+    if (sync) {
+      //sync
+      console.log('running pwd sync');
+      try {
+        let pwd = spawnSync('pwd',[]);
+        console.log('pwd output is: ' + pwd.output);
+      } catch (e) {
+        console.error(`pwd error: ${e}`);
+      }
+    } else {
+      //async pwd
+      console.log('running pwd async');
+      let pwd = spawn('pwd');
+      pwd.stdout.on('data', (data) => {
+        console.log('running in ' + data);
+      });
+      pwd.stderr.on('pwd stderr data', (data) => {
+        console.error('pwd stderr data ' + data);
+      });
+      pwd.on('pwd error', (error) => {
+        console.error(`pwd error: ${error.message}`);
+      });
     }
   }
 }
