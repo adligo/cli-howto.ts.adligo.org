@@ -15,8 +15,28 @@
   * limitations under the License.
   */
 
-  console.log('hello cli-howto');
-  console.log('There are ' + process.argv.length + ' command line arguments');
-  for (var i=0; i<process.argv.length; i++) {
-    console.log('cli arg ' + i + ' is ' + process.argv[i]);
+const { spawn } = require('child_process')
+
+class CliArgParser {
+
+  constructor() {
+    let pwd = spawn('pwd');
+    pwd.stdout.on('data', (data) => {
+      console.log('running in ' + data);
+    });
+    pwd.stderr.on('pwd stderr data', (data) => {
+      console.log('pwd stderr data ' + data);
+    });
+    pwd.on('pwd error', (error) => {
+      console.log(`pwd error: ${error.message}`);
+  });
+    console.log('There are ' + process.argv.length + ' command line arguments');
+    for (var i=0; i< process.argv.length; i++) {
+      console.log('cli arg ' + i + ' is ' + process.argv[i]);
+    }
   }
+}
+
+console.log('hello cli-howto ');
+new CliArgParser();
+console.log('CliArgParser created');

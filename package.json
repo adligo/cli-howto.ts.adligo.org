@@ -1,18 +1,21 @@
 {
+  "author": "Scott Morgan",
   "bin": {
-    "cli-howto": "src/cli-howto.ts"
+    "cli-howto": "./src/cli-howto.ts"
   },
-  "name": "@ts.adligo.org/cli-howto",
-  "version": "1.0.7",
-  "description": "This is the simplest possible, tutorial on how to write a node.js cli (Command Line Interface) program",
-  "main": "src/cli-howto.ts",
-  "scripts": {
-    "test": "test"
+  "bugs": {
+    "url": "https://github.com/adligo/cli-howto.ts.adligo.org/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adligo/cli-howto.ts.adligo.org.git"
+  "description": "This is a simple CLI application.",
+  "dependencies": {
+    "typescript": "^5.0.3"
   },
+  "devDependencies": {
+    "@types/node": "^18.15.12",
+    "child_process": "^1.0.2",
+    "ts-node": "^10.9.1"
+  },
+  "homepage": "https://github.com/adligo/cli-howto.ts.adligo.org#readme",
   "keywords": [
     "symbolic",
     "link",
@@ -20,13 +23,17 @@
     "shared",
     "modules"
   ],
-  "author": "Scott Morgan",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/adligo/cli-howto.ts.adligo.org/issues"
+  "name": "@ts.adligo.org/cli-howto",
+  "main": "src/cli-howto.mts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adligo/cli-howto.ts.adligo.org.git"
   },
-  "homepage": "https://github.com/adligo/cli-howto.ts.adligo.org#readme",
-  "devDependencies": {
-    "typescript": "^5.0.4"
-  }
+  "scripts": {
+    "run": "ts-node ./src/cli-howto.ts",
+    "test": "test"
+  },
+  "type": "commonjs",
+  "version": "1.0.13"
 }
